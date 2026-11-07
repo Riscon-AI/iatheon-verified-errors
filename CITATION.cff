@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "IATHEON verified errors"
+type: dataset
+authors:
+  - name: "RISCON Labs"
+date-released: 2026-11-07
+version: "1.0"
+license: CC-BY-4.0
+url: "https://iatheon.risconlabs.com"
+repository-code: "https://github.com/Riscon-AI/iatheon-verified-errors"
+abstract: "545 judged statements from AI-written oncology summaries (492 confirmed errors, 38 rejected flags, 15 unchanged audit findings), each tied to the PubMed abstract or ClinicalTrials.gov snapshot it was checked against, with the judging and verifying model at each step."

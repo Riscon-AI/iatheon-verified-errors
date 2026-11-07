@@ -1,0 +1,70 @@
+[
+ {
+  "pass": "2026-11-06-new-papers-commentaries",
+  "scope": "233 newly written paper summaries and judgment commentaries",
+  "judges": "Qwen3 235B (batch), Kimi K3.1 Pro",
+  "decoys": 21,
+  "decoys_caught": {
+   "Qwen3 235B": 4,
+   "Kimi K3.1 Pro": 14
+  },
+  "flagged": 106,
+  "confirmed_in_audit_log": 26,
+  "in_dataset": {
+   "confirmed": 25
+  },
+  "note": "Confirmed corrections are recovered as text pairs from the correction scripts; severity, judge wording and source excerpts were not stored for this pass."
+ },
+ {
+  "pass": "2026-11-06-new-trial-summaries",
+  "scope": "279 newly written trial summaries",
+  "judges": "Kimi K3.1 Pro",
+  "decoys": 0,
+  "flagged": 338,
+  "confirmed_in_audit_log": 78,
+  "fatal_in_audit_log": 1,
+  "in_dataset": {
+   "confirmed": 78
+  },
+  "note": "Text pairs recovered from the correction scripts; severity was not stored."
+ },
+ {
+  "pass": "2026-11-07-random-sample-audit",
+  "scope": "60 randomly drawn records (25 paper summaries, 20 trial summaries, 15 commentaries), 773 sentences",
+  "judges": "Claude Opus 5.5, four independent auditors reading every sentence against the stored sources",
+  "findings": {
+   "FATAL": 3,
+   "MAJOR": 28,
+   "MINOR": 31
+  },
+  "in_dataset": {
+   "confirmed": 47,
+   "flagged, not changed after recheck": 15
+  },
+  "note": "A finding counts as confirmed when its sentence was rewritten after the recheck. corrected_text holds the auditor's proposed fix; the published sentence may differ."
+ },
+ {
+  "pass": "2026-11-07-all-trial-summaries-kimi-agy",
+  "scope": "all 667 trial summaries (part judged by Kimi K3.1 Pro, part by Claude Sonnet 5.5)",
+  "judges": "Kimi K3.1 Pro; Claude Sonnet 5.5",
+  "in_dataset": {
+   "confirmed": 286,
+   "rejected": 13
+  }
+ },
+ {
+  "pass": "2026-11-07-all-trial-summaries-sonnet46-batch",
+  "scope": "all 667 trial summaries plus 25 decoys",
+  "judges": "Claude Sonnet 4.6 (batch)",
+  "decoys": 25,
+  "decoys_caught": {
+   "Claude Sonnet 4.6": 17,
+   "Gemini 4 (separate pass)": 21
+  },
+  "in_dataset": {
+   "confirmed": 56,
+   "rejected": 25
+  },
+  "note": "The audit log counts 356 confirmed corrections for all 667 trial summaries; 342 are in this dataset. The other 14 (11 from a Gemini 4 pass, 3 found during verification) were not stored in the structured verification files."
+ }
+]
